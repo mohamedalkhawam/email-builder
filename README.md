@@ -15,13 +15,13 @@ pnpm add @mohamedalkhawam/email-builder
 ## Usage
 
 ```jsx
-import { Main } from '@mohamedalkhawam/email-builder';
+import { EmailBuilder } from '@mohamedalkhawam/email-builder';
 
 function App() {
   return (
     <div>
       <h1>My Email Builder App</h1>
-      <Main text='Hello World!' />
+      <EmailBuilder text='Hello World!' />
     </div>
   );
 }
