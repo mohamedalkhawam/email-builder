@@ -35,6 +35,7 @@ export default function SamplesDrawer() {
             <SidebarButton href='#sample/reservation-reminder'>Reservation reminder</SidebarButton>
             <SidebarButton href='#sample/post-metrics-report'>Post metrics</SidebarButton>
             <SidebarButton href='#sample/respond-to-message'>Respond to inquiry</SidebarButton>
+            <SidebarButton href='#sample/ots-default'>OTS default</SidebarButton>
           </Stack>
 
           <Divider />
