@@ -1,2 +1,2 @@
-export { default as Main } from './demo';
-export type { MainProps } from './types';
+export { default as EmailBuilder } from './demo';
+export type { EmailBuilderProps } from './types';

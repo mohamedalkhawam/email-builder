@@ -1,3 +1,3 @@
-export interface MainProps {
+export interface EmailBuilderProps {
   text?: string;
 }
