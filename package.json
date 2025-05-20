@@ -9,6 +9,9 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "branch": "transform-to-npm-package"
+  },
   "keywords": [
     "react",
     "email",
