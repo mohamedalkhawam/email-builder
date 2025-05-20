@@ -7,7 +7,7 @@ import RESET_PASSWORD from './sample/reset-password';
 import RESPOND_TO_MESSAGE from './sample/respond-to-message';
 import SUBSCRIPTION_RECEIPT from './sample/subscription-receipt';
 import WELCOME from './sample/welcome';
-
+import OTS_DEFAULT from './sample/ots-default';
 export default function getConfiguration(template: string) {
   if (template.startsWith('#sample/')) {
     const sampleName = template.replace('#sample/', '');
@@ -28,6 +28,8 @@ export default function getConfiguration(template: string) {
         return RESPOND_TO_MESSAGE;
       case 'subscription-receipt':
         return SUBSCRIPTION_RECEIPT;
+      case 'ots-default':
+        return OTS_DEFAULT;
     }
   }
 
