@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import insane, { type AllowedTags } from 'insane';
-import { marked, Renderer } from 'marked';
+import { marked } from 'marked';
 import { type CSSProperties, useMemo } from 'react';
 
 const ALLOWED_TAGS: AllowedTags[] = [
@@ -67,44 +66,26 @@ function sanitizer(html: string): string {
   });
 }
 
-class CustomRenderer extends Renderer {
-  table(header: string, body: string) {
-    return `<table width="100%">
-<thead>
-${header}</thead>
-<tbody>
-${body}</tbody>
-</table>`;
-  }
-
-  link(href: string, title: string | null, text: string) {
-    if (!title) {
-      return `<a href="${href}" target="_blank">${text}</a>`;
-    }
-    return `<a href="${href}" title="${title}" target="_blank">${text}</a>`;
-  }
-}
-
 function renderMarkdownString(str: string): string {
-  const html = marked.parse(str, {
-    async: false,
-    breaks: true,
-    gfm: true,
-    pedantic: false,
-    silent: false,
-    // @ts-ignore
-    renderer: new CustomRenderer(),
-  });
-  if (typeof html !== 'string') {
-    throw new Error('marked.parse did not return a string');
-  }
-  return sanitizer(html);
+  // Parse using marked
+  const html = marked.parse(str) as string;
+
+  // Post-process the HTML to add our custom attributes
+  const processedHtml = html
+    // Add target="_blank" to links
+    .replace(/<a href="([^"]+)"/g, '<a href="$1" target="_blank"')
+    // Add width="100%" to tables
+    .replace(/<table>/g, '<table width="100%">');
+
+  // Sanitize the final result
+  return sanitizer(processedHtml);
 }
 
 type Props = {
   style: CSSProperties;
   markdown: string;
 };
+
 export default function EmailMarkdown({ markdown, ...props }: Props) {
   const data = useMemo(() => renderMarkdownString(markdown), [markdown]);
   return <div {...props} dangerouslySetInnerHTML={{ __html: data }} />;

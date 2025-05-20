@@ -21,19 +21,26 @@ export default defineConfig({
       entry: path.resolve(__dirname, 'src/index.ts'),
       name: 'EmailBuilder',
       formats: ['es'],
-      fileName: () => `index.js`,
+      fileName: () => 'index.js',
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime'],
+      external: ['react', 'react-dom', 'react/jsx-runtime', '@emotion/react', '@emotion/styled', '@mui/material', '@mui/icons-material'],
       output: {
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
           'react/jsx-runtime': 'jsxRuntime',
+          '@emotion/react': 'emotionReact',
+          '@emotion/styled': 'emotionStyled',
+          '@mui/material': 'muiMaterial',
+          '@mui/icons-material': 'muiIconsMaterial',
         },
+        preserveModules: false,
+        inlineDynamicImports: true,
       },
     },
     sourcemap: true,
     emptyOutDir: true,
+    minify: true,
   },
 });
