@@ -1,7 +1,2 @@
-import type { EmailBuilderProps, EmailContent } from './types';
-
-// Export main component
-export { default as EmailBuilder } from './components/email-builder/EmailBuilder';
-
-// Export types
-export type { EmailBuilderProps, EmailContent };
+export { default as Main } from './demo';
+export type { MainProps } from './types';
