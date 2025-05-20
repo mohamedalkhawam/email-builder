@@ -2,9 +2,9 @@ import { CssBaseline, ThemeProvider } from '@mui/material';
 
 import App from './App/index';
 import theme from './theme';
-import type { MainProps } from './types';
+import type { EmailBuilderProps } from './types';
 
-export default function Main({ text }: MainProps) {
+export default function Main({ text }: EmailBuilderProps) {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
