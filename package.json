@@ -1,6 +1,6 @@
 {
   "name": "@mohamedalkhawam/email-builder",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React email builder component",
   "type": "module",
   "main": "./dist/index.js",
@@ -24,7 +24,8 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mohamedalkhawam/email-builder"
+    "url": "https://github.com/mohamedalkhawam/email-builder",
+    "branch": "transform-to-npm-package"
   },
   "scripts": {
     "dev": "vite",
