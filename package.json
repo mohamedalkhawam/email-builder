@@ -10,7 +10,7 @@
     "dist"
   ],
   "publishConfig": {
-    "branch": "transform-to-npm-package"
+    "branch": "main"
   },
   "keywords": [
     "react",
@@ -25,7 +25,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/mohamedalkhawam/email-builder",
-    "branch": "transform-to-npm-package"
+    "branch": "main"
   },
   "scripts": {
     "dev": "vite",
