@@ -1,6 +1,6 @@
 {
   "name": "@mohamedalkhawam/email-builder",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "React email builder component",
   "type": "module",
   "main": "./dist/index.js",
