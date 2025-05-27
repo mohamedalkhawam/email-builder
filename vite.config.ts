@@ -11,7 +11,7 @@ export default defineConfig({
   plugins: [
     react(),
     dts({
-      include: ['src'],
+      include: ['src/ots-email-builder'],
       outDir: 'dist',
       staticImport: true,
       insertTypesEntry: true,
